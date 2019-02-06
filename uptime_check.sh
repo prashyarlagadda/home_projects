@@ -1,5 +1,7 @@
 #!/bin/bash
-#script to re-boot the device after 5 days
+
+#Script to re-boot the device after 5 days
+
 max_days_without_reboot=5
 days_without_reboot=$(uptime | awk '{ print $3 }')
 if  [ "$days_without_reboot" -ge 5 ]
