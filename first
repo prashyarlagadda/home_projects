@@ -1,0 +1,29 @@
+#!/bin/bash
+# My first script
+
+echo "Hello World!"
+
+my_shell="first"
+echo "this is my $my_shell program"
+
+MY_SHELL="bash"
+echo "I am $MY_SHELLing on my computer"
+
+SERVER_NAME=$(hostname)
+echo "You are running this script on  ${SERVER_NAME}"
+if [ "$MY_SHELL" = "bash" ]
+then 
+echo "the condition passed"
+else
+echo "the condition failed"
+fi
+for color in red, blue, yellow
+do 
+echo "color : $color"
+done
+colors="pink orange"
+for color in $colors 
+do 
+echo "color: $colors"
+done
+
