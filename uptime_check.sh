@@ -6,12 +6,12 @@ GREEN='\033[0;32m'
 YELLOW='\033[1;33m'
 RED='\033[0;31m'
 SET='\033[0m'
-max_days_without_reboot=5
+max_days_without_reboot=4
 days_without_reboot=$(uptime | awk '{ print $3 }')
 time_remaining=$(expr $max_days_without_reboot - $days_without_reboot)
-if  [ "$days_without_reboot" -ge 5 ]
+if  [ "$days_without_reboot" -ge 4 ]
     then
-        echo "Device has been up for $days_without_reboot days & needs a reboot" 
+        echo "${RED}Device has been up for $days_without_reboot days & needs a reboot${SET}"
         sudo reboot
 elif [ "$time_remaining" -le 2 ]
     then

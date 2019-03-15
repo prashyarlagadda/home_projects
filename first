@@ -1,16 +1,19 @@
-#!/bin/bash
+#!/bin/bash 
 # My first script
 
 echo "Hello World!"
 
 my_shell="first"
 echo "this is my $my_shell program"
-
+file_name="/not/here"
+ls $file_name
+echo $file_name
 MY_SHELL="bash"
 echo "I am $MY_SHELLing on my computer"
-
+set -vx
 SERVER_NAME=$(hostname)
 echo "You are running this script on  ${SERVER_NAME}"
+set +vx
 if [ "$MY_SHELL" = "bash" ]
 then 
 echo "the condition passed"
@@ -27,3 +30,5 @@ do
 echo "color: $colors"
 done
 
+HOST="googligooglego.com"
+ping -c 1 $HOST || echo "$HOST unreachable"
